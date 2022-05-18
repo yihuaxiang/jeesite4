@@ -274,7 +274,7 @@ public class ExcelExport implements Closeable{
 	 * 添加到 annotationList
 	 */
 	private void addAnnotation(List<Object[]> annotationList, ExcelField ef, Object fOrM, Type type, String... groups){
-//		if (ef != null && (ef.type()==0 || ef.type()==type)){
+//		if (ef != null && (ef.type() == 0 || ef.type() == type)){
 		if (ef != null && (ef.type() == Type.ALL || ef.type() == type)){
 			if (groups != null && groups.length > 0){
 				boolean inGroup = false;
@@ -327,7 +327,7 @@ public class ExcelExport implements Closeable{
 			Cell cell = headerRow.createCell(i);
 			cell.setCellStyle(styles.get("header"));
 			String[] ss = StringUtils.split(headerList.get(i), "**", 2);
-			if (ss.length==2){
+			if (ss.length == 2){
 				cell.setCellValue(ss[0]);
 				Comment comment = this.sheet.createDrawingPatriarch().createCellComment(
 						new XSSFClientAnchor(0, 0, 0, 0, (short) 3, 3, (short) 5, 6));
@@ -552,8 +552,8 @@ public class ExcelExport implements Closeable{
 					if (StringUtils.isNotBlank(ef.dictType())){
 						Class<?> dictUtils = Class.forName("com.jeesite.modules.sys.utils.DictUtils");
 						val = dictUtils.getMethod("getDictLabels", String.class, String.class,
-									String.class).invoke(null, ef.dictType(), val==null?"":val.toString(), "");
-						//val = DictUtils.getDictLabel(val==null?"":val.toString(), ef.dictType(), "");
+									String.class).invoke(null, ef.dictType(), val == null?"":val.toString(), "");
+						//val = DictUtils.getDictLabel(val == null?"":val.toString(), ef.dictType(), "");
 					}
 				}catch(Exception ex) {
 					// Failure to ignore

@@ -406,7 +406,7 @@ public class ListUtils extends org.apache.commons.collections.ListUtils {
 		if (list != null && StringUtils.isNotBlank(orderBy)){
 			final String[] ss = orderBy.trim().split(" ");
 			if (ss != null){
-				final String t = ss.length==2 ? ss[1] : "asc";
+				final String t = ss.length == 2 ? ss[1] : "asc";
 				Collections.sort(list, new Comparator<T>() {
 					@Override
 					public int compare(T o1, T o2) {

@@ -155,7 +155,7 @@ public class ExcelImport implements Closeable {
 	 * 添加到 annotationList
 	 */
 	private void addAnnotation(List<Object[]> annotationList, ExcelField ef, Object fOrM, Type type, String... groups){
-//		if (ef != null && (ef.type()==0 || ef.type()==type)){
+//		if (ef != null && (ef.type() == 0 || ef.type() == type)){
 		if (ef != null && (ef.type() == Type.ALL || ef.type() == type)){
 			if (groups!=null && groups.length>0){
 				boolean inGroup = false;
